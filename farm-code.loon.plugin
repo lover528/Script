@@ -1,0 +1,12 @@
+#!name=lover528 farm-code
+#!desc=拦截 gate-obt.nqf.qq.com 获取 code
+#!author=lover528
+
+[Rewrite]
+^https:\/\/gate-obt\.nqf\.qq\.com url script-request-header farm-code.js
+
+[Script]
+http-request ^https:\/\/gate-obt\.nqf\.qq\.com script-path=https://raw.githubusercontent.com/lover528/Script/master/farm-code.js, requires-body=false, timeout=10, tag=farm-code
+
+[MITM]
+hostname = gate-obt.nqf.qq.com
